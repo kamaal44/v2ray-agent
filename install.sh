@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export PATH="/usr/bin/:#$PATH"
+export PATH="/usr/bin/:/root/.nvm/versions/node/v10.17.0/bin:$PATH"
 purple="\033[35m"
 skyBlue="\033[36m"
 red="\033[31m"
@@ -251,12 +251,15 @@ generatorVmess(){
         then
             echo -e ${red}"安装工具包中..."${none}
             installTools
-        else
-            echo -e "V2Ray配置文件路径:${V2RayPath}  Nginx配置文件路径：${NginxPath}"
-            vmessResult=`curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | ${nodePath} - "${V2RayPath}" "${NginxPath}"`
-            echo -e "${skyBlue}${vmessResult}${none}"
-            # curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | /usr/bin/node - "/usr/bin/V2RayConfig/config_ws_tls.json" "/etc/nginx/nginx.conf"
         fi
+        echo -e "${purple}V2Ray配置文件路径:${none}"
+        echo -e "${skyBlue}    ${V2RayPath}${none}"
+        echo -e "${purple}Nginx配置文件路径:${none}"
+        echo -e "${skyBlue}    ${NginxPath}${none}"
+        echo
+        vmessResult=`curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | ${nodePath} - "${V2RayPath}" "${NginxPath}"`
+        echo -e "${skyBlue}${vmessResult}${none}"
+        # curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | /usr/bin/node - "/usr/bin/V2RayConfig/config_ws_tls.json" "/etc/nginx/nginx.conf"
     fi
 }
 startServer(){
@@ -266,6 +269,7 @@ startServer(){
     echo "启动完毕"
 }
 installTools(){
+    source /root/.bashrc
     existProcessWget=`ps -ef|grep wget|grep -v grep`
     existWget=`command -v wget`
     yum update
@@ -299,8 +303,8 @@ installTools(){
     then
         echo -e ${skyBlue}安装nvm中...${none}
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-        source /root/.bashrc
         echo -e ${skyBlue}安装Node.js中...${none}
+        source /root/.bashrc
         nvm install v10.17.0
     fi
     existQrencode=`command -v qrencode`
