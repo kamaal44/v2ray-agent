@@ -27,8 +27,8 @@
 - [4.客户端](#4客户端)
   * [1.MacOS](#1macos)
   * [2.windows](#2windows)
-- [5.优化v2ray【断流、CNAME自选ip】](https://raw.githubusercontent.com/mack-a/v2ray-agent/master/optimize_V2Ray.md)
-- [6.其余设置【开机自启、bbr加速】](https://raw.githubusercontent.com/mack-a/v2ray-agent/master/settings.md)
+- [5.优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
+- [6.其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 * * *
 
 # 技能点列表
@@ -38,7 +38,7 @@
 - [godaddy](https://www.godaddy.com/)【域名厂商】
 - [letsencrypt](https://letsencrypt.org/)【HTTPS】
 - [Nginx](https://www.nginx.com/)【反向代理】
-- [v2ray](v2ray.com)【代理工具】
+- [V2Ray](v2ray.com)【代理工具】
 
 # 一键脚本
 - 此脚本在Google cloud测试成功，系统为Centos7
