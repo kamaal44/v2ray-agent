@@ -246,9 +246,17 @@ generatorVmess(){
             init
         fi
         # 执行node生成vmess链接
-        echo ${V2RayPath},${NginxPath}
-        vmessResult=`curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | /root/.nvm/versions/node/v12.8.1/bin/node - ${V2RayPath} ${NginxPath}`
-        echo -e "${skyBlue}${vmessResult}${none}"
+        nodePath=`command -v node`
+        if [ -z "${nodePath}" ]
+        then
+            echo -e ${red}"安装工具包中..."${none}
+            installTools
+        else
+            echo -e "V2Ray配置文件路径:${V2RayPath}  Nginx配置文件路径：${NginxPath}"
+            vmessResult=`curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | ${nodePath} - "${V2RayPath}" "${NginxPath}"`
+            echo -e "${skyBlue}${vmessResult}${none}"
+            # curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | /usr/bin/node - "/usr/bin/V2RayConfig/config_ws_tls.json" "/etc/nginx/nginx.conf"
+        fi
     fi
 }
 startServer(){
@@ -289,8 +297,11 @@ installTools(){
     existNode=`command -v node`
     if [ -z "$existNode" ]
     then
-        echo -e ${skyBlue}安装Nodejs中...${none}
-        yum install nodejs
+        echo -e ${skyBlue}安装nvm中...${none}
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+        source /root/.bashrc
+        echo -e ${skyBlue}安装Node.js中...${none}
+        nvm install v10.17.0
     fi
     existQrencode=`command -v qrencode`
     if [ -z "$existQrencode" ]
@@ -308,6 +319,7 @@ unInstall(){
     rm -rf /usr/bin/v2ctl
     rm -rf /usr/bin/V2RayConfig
     rm -rf /etc/nginx
+    rm -rf /root/.nvm
     ps -ef|grep v2ray|grep -v grep|awk '{print $2}'|xargs kill -9
 }
 configPath(){
@@ -399,11 +411,11 @@ automationFun(){
             automationFun 5
         ;;
         5)
-            startServer
+            generatorVmess
             automationFun 6
         ;;
         6)
-            generatorVmess
+            startServer
             exit
         ;;
     esac

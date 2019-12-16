@@ -87,15 +87,11 @@ const formatResult = () => {
             });
         });
     });
-    console.log('v2rayResult:', v2rayResult);
     configArr = configArr.map(v => {
         return `${v.ps} vmess://${Buffer.from(JSON.stringify(v)).toString('base64')}`;
     });
-    console.log('configArr:', configArr);
     configArr.forEach(v => {
         console.log(v);
     });
 };
-console.log('开始');
 formatResult();
-console.log('结束');
