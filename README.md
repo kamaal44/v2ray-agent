@@ -45,6 +45,7 @@
 - 执行一键脚本的前提是下面的 【1.准备工作】 完成并正确
 - 支持一键搭建、支持部分手动模块
 - 后续会支持升级、生成客户端链接（shadowrocket、Quantumult）、开机自启、HTTPS续签
+- 后续支持增加面板功能（在线创建、删除、修改账户，一键管理Nginx、TLS等）
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh)
 ```
