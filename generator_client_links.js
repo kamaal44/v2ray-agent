@@ -61,8 +61,6 @@ const formatResult = () => {
     let v2rayResult = formatV2rayConfig(v2RayPath);
     let nginxResult = formatNginx(nginxPath);
     let configArr = [];
-    console.log('v2RayPath:', v2RayPath);
-    console.log('nginxPath:', nginxPath);
 
     v2rayResult.forEach(v => {
         let item = nginxResult.filter(v2 => {

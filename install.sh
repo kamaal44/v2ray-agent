@@ -252,13 +252,19 @@ generatorVmess(){
             echo -e ${red}"安装工具包中..."${none}
             installTools
         fi
+        echo
+        echo -e "${purple}===============================${none}"
         echo -e "${purple}V2Ray配置文件路径:${none}"
-        echo -e "${skyBlue}    ${V2RayPath}${none}"
+        echo -e "${green}    ${V2RayPath}${none}"
         echo -e "${purple}Nginx配置文件路径:${none}"
-        echo -e "${skyBlue}    ${NginxPath}${none}"
+        echo -e "${green}    ${NginxPath}${none}"
+        echo -e "${purple}===============================${none}"
         echo
         vmessResult=`curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | ${nodePath} - "${V2RayPath}" "${NginxPath}"`
+        echo -e "${purple}客户端链接:${none}"
+        echo -e "${green}===============================${none}"
         echo -e "${skyBlue}${vmessResult}${none}"
+        echo -e "${green}===============================${none}"
         # curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | /usr/bin/node - "/usr/bin/V2RayConfig/config_ws_tls.json" "/etc/nginx/nginx.conf"
     fi
 }
