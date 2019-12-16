@@ -1,128 +1,95 @@
-// List of domains bind to your WorkersProxy.
-const domain_list = ['https://broken-glitter-e21b.akuner.workers.dev/'];
+const fs = require('fs');
 
-// Website you intended to retrieve for users.
-const upstream = 'https://www.google.com/';
-
-// Website you intended to retrieve for users using mobile devices.
-const upstream_mobile = 'https://www.google.com/';
-
-// Countries and regions where you wish to suspend your service.
-const blocked_region = ['KP', 'SY', 'PK', 'CU'];
-
-// IP addresses which you wish to block from using your service.
-const blocked_ip_address = ['0.0.0.0', '127.0.0.1'];
-
-addEventListener('fetch', event => {
-    event.respondWith(fetchAndApply(event.request));
-});
-
-async function fetchAndApply (request) {
-    console.log('这里开始打印');
-    console.log(request.headers);
-    console.log('这里打印结束');
-    const region = request.headers.get('cf-ipcountry').toUpperCase();
-    const ip_address = request.headers.get('cf-connecting-ip');
-    const user_agent = request.headers.get('user-agent');
-
-    let response = null;
-    let url = new URL(request.url);
-    let url_host = url.host;
-
-    if (url.protocol == 'http:') {
-        url.protocol = 'https:';
-        response = Response.redirect(url.href);
-        return response;
-    }
-
-    if (await device_status(user_agent)) {
-        upstream_domain = upstream;
-    } else {
-        upstream_domain = upstream_mobile;
-    }
-
-    url.host = upstream_domain;
-
-    if (blocked_region.includes(region)) {
-        response = new Response('Access denied: WorkersProxy is not available in your region yet.', {
-            status: 403,
-        });
-    } else if (blocked_ip_address.includes(ip_address)) {
-        response = new Response('Access denied: Your IP address is blocked by WorkersProxy.', {
-            status: 403,
-        });
-    } else {
-        let method = request.method;
-        let request_headers = request.headers;
-        let new_request_headers = new Headers(request_headers);
-
-        new_request_headers.set('Host', upstream_domain);
-        new_request_headers.set('Referer', url.href);
-
-        let original_response = await fetch(url.href, {
-            method: method,
-            headers: new_request_headers,
-        });
-
-        let original_response_clone = original_response.clone();
-        let original_text = null;
-        let response_headers = original_response.headers;
-        let new_response_headers = new Headers(response_headers);
-        let status = original_response.status;
-
-        new_response_headers.set('access-control-allow-origin', '*');
-        new_response_headers.set('access-control-allow-credentials', true);
-        new_response_headers.delete('content-security-policy');
-        new_response_headers.delete('content-security-policy-report-only');
-        new_response_headers.delete('clear-site-data');
-
-        const content_type = new_response_headers.get('content-type');
-        if (content_type.includes('text/html') && content_type.includes('UTF-8')) {
-            original_text = await replace_response_text(original_response_clone, upstream_domain, url_host);
-        } else {
-            original_text = original_response_clone.body;
+/**
+ * 格式化nginx配置
+ * @returns {string[]}
+ */
+const formatNginx = (nginxPath) => {
+    let nginxConfig = fs.readFileSync(nginxPath).toString().split('listen');
+    nginxConfig = nginxConfig.map(v => {
+        return v.replace(/(^\s*)/g, '');
+    }).filter(v => {
+        if (v.substring(0, 3) === '443') {
+            return true;
         }
+    });
+    nginxConfig = nginxConfig.map(v => {
+        v = v.split('\n').map(v => {
+            return v.replace(/(^\s*)/g, '')
+                .replace(/[\;/=]/g, '')
+                .replace(/[\{/=]/g, '')
+                .replace(/[\}/=]/g, '')
+                .replace(/(\s*$)/g, '');
+        }).filter(v => v.includes('server_name') || v.includes('location')).map(v => {
+            v = v.split(' ');
+            if (v[1]) {
+                return v[1];
+            }
+        }).filter(v => v);
+        return v;
+    });
+    return nginxConfig;
+};
+/**
+ * 格式化v2ray配置文件
+ */
+const formatV2rayConfig = (v2RayPath) => {
+    let nginxConfig = fs.readFileSync(v2RayPath).toString();
+    nginxConfig = JSON.parse(nginxConfig).inbounds;
+    nginxConfig = nginxConfig.map(v => {
+        return {
+            users: v.settings.clients,
+            security: v.streamSettings.security,
+            network: v.streamSettings.network,
+            path: v.streamSettings.wsSettings.path,
+        };
+    });
+    return nginxConfig;
+};
+const formatResult = () => {
+    let v2RayPath = null;
+    let nginxPath = null;
+    if (process && process.argv.length === 4) {
+        v2RayPath = process.argv[2];
+        nginxPath = process.argv[3];
+    }
+    if (!v2RayPath || !nginxPath) {
+        console.log('message 参数错误');
+        return;
+    }
 
-        response = new Response(original_text, {
-            status,
-            headers: new_response_headers,
+    let v2rayResult = formatV2rayConfig(v2RayPath);
+    let nginxResult = formatNginx(nginxPath);
+    let configArr = [];
+
+    v2rayResult.forEach(v => {
+        let item = nginxResult.filter(v2 => {
+            return v2.includes(v.path.replace(/[//=]/g, ''));
         });
-    }
-    return response;
-}
+        item.forEach(v2 => {
 
-async function replace_response_text (response, upstream_domain, host_name) {
-    let text = await response.text();
-
-    var i,
-        j;
-    for (i in replace_dict) {
-        j = replace_dict[i];
-        if (i == '$upstream') {
-            i = upstream_domain;
-        } else if (i == '$custom_domain') {
-            i = host_name;
-        }
-
-        if (j == '$upstream') {
-            j = upstream_domain;
-        } else if (j == '$custom_domain') {
-            j = host_name;
-        }
-
-        let re = new RegExp(i, 'g');
-        text = text.replace(re, j);
-    }
-    return text;
-}
-
-async function device_status (user_agent_info) {
-    var agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
-    var flag = true;
-    for (var v = 0; v < agents.length; v++) {
-        if (user_agent_info.indexOf(agents[v]) > 0) {
-            break;
-        }
-    }
-    return flag;
-}
+            v.users.forEach(v3 => {
+                configArr.push({
+                    port: v.network === 'ws' ? 443 : 0,
+                    tls: v.network === 'ws' ? 'tls' : false,
+                    host: '',
+                    type: 'none',
+                    path: v.path,
+                    net: v.network,
+                    add: v2[0],
+                    ps: v3.email,
+                    aid: v3.level,
+                    v: v3.v,
+                    id: v3.id,
+                });
+            });
+        });
+    });
+    configArr = configArr.map(v => {
+        return `${v.ps} vmess://${Buffer.from(JSON.stringify(v)).toString('base64')}`;
+    });
+    configArr.forEach(v => {
+        console.log(v);
+    });
+};
+formatResult();
