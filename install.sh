@@ -261,10 +261,12 @@ generatorVmess(){
         echo -e "${purple}===============================${none}"
         echo
         vmessResult=`curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | ${nodePath} - "${V2RayPath}" "${NginxPath}"`
-        echo -e "${purple}客户端链接:${none}"
+
         echo -e "${green}===============================${none}"
+        echo -e "${purple}客户端链接:${none}"
         echo -e "${skyBlue}${vmessResult}${none}"
         echo -e "${green}===============================${none}"
+        echo
         # curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | /usr/bin/node - "/usr/bin/V2RayConfig/config_ws_tls.json" "/etc/nginx/nginx.conf"
     fi
 }
