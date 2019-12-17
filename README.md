@@ -27,10 +27,12 @@
 - [4.客户端](#4客户端)
   * [1.MacOS](#1macos)
   * [2.windows](#2windows)
-- [5.优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
-- [6.其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 * * *
 
+* * *
+- [优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
+- [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
+* * *
 # 技能点列表
 - [bandwagonhost[centos7]链接一](https://bandwagonhost.com)
 - [bandwagonhost[centos7]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
