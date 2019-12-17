@@ -28,8 +28,6 @@
   * [1.MacOS](#1macos)
   * [2.windows](#2windows)
 * * *
-
-* * *
 - [优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
 - [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 * * *
