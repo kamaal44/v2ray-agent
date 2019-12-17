@@ -263,8 +263,17 @@ generatorVmess(){
         vmessResult=`curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | ${nodePath} - "${V2RayPath}" "${NginxPath}"`
 
         echo -e "${green}===============================${none}"
-        echo -e "${purple}客户端链接:${none}"
-        echo -e "${skyBlue}${vmessResult}${none}"
+        echo
+        eval $(echo "$vmessResult" |awk '{split($0,vmess," ");for(i in vmess) print "lenArr["i"]="vmess[i]}')
+        for value in ${lenArr[*]}
+        do
+            echo -e "${purple}客户端链接:${none}"
+            echo -e "${skyBlue}  $value${none}"
+            echo
+            echo -e "${purple}二维码:${none}"
+            echo $value | qrencode -s 10 -m 1 -t UTF8
+            echo
+        done
         echo -e "${green}===============================${none}"
         echo
         # curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/generator_client_links.js | /usr/bin/node - "/usr/bin/V2RayConfig/config_ws_tls.json" "/etc/nginx/nginx.conf"
