@@ -91,5 +91,8 @@ const formatResult = () => {
     configArr.forEach(v => {
         console.log(v);
     });
+    configArr.forEach(v => {
+        console.log(v);
+    });
 };
 formatResult();
