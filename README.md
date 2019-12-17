@@ -7,6 +7,8 @@
 # 目录
 - [技能点列表](#技能点列表)
 - [一键脚本](#一键脚本)
+  * [1.自动模式](#1自动模式)
+  * [2.手动模式](#2手动模式)
 - [1.准备工作](#1准备工作)
   * [1.注册cloudflare](#1注册cloudflare)
   * [2.注册godaddy并购买域名](#2注册godaddy并购买域名)
@@ -41,7 +43,7 @@
 - [V2Ray](v2ray.com)【代理工具】
 
 # 一键脚本
-- 此脚本在Google cloud测试成功，系统为Centos7
+- 此脚本在Google cloud测试成功，系统为Centos7（后续会支持其余unix系统）
 - 执行一键脚本的前提是下面的 【1.准备工作】 完成并正确
 - 支持一键搭建、支持部分手动模块
 - 后续会支持升级、生成客户端链接（shadowrocket、Quantumult）、开机自启、HTTPS续签
@@ -49,7 +51,15 @@
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh)
 ```
-<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本示例图.png" width=400>
+
+## 1.自动模式
+- 只需要输入y以及域名即可
+- 仔细检查【1.准备工作】正确
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本自动模式.png" width=400>
+
+## 2.手动模式
+- 可以指定需要执行的内容
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本手动模式.png" width=400>
 
 # 1.准备工作
 ## 1.注册[cloudflare](cloudflare.com)
