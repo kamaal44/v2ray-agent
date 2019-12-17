@@ -87,10 +87,8 @@ const formatResult = () => {
     });
     configArr.push(configArr[0]);
     configArr = configArr.map(v => {
-        return `vmess://${Buffer.from(JSON.stringify(v)).toString('base64')} `;
+        return `vmess://${Buffer.from(JSON.stringify(v)).toString('base64')}`;
     });
-    configArr.forEach(v => {
-        console.log(v);
-    });
+    console.log(configArr.toString().replace(/,/g,' '));
 };
 formatResult();
