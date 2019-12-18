@@ -57,7 +57,7 @@
 - [x] 4.检测https是否安装并配置
 - [x] 5.检测V2Ray是否安装并配置
 - [x] 6.生成vmess、二维码链接
-- - [ ] 1.shadowrocket
+- - [x] 1.shadowrocket
 - - [ ] 2.Quantumult
 - [x] 7.启动服务并退出脚本
 - [ ] 8.HTTPS续签
