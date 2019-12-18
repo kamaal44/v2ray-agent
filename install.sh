@@ -367,7 +367,7 @@ manageFun(){
     echo -e "${skyBlue}  6.启动服务并退出脚本${none}"
     echo -e "${skyBlue}  7.卸载安装的所有内容${none}"
     echo -e "${skyBlue}  8.查看配置文件路径${none}"
-    echo -e "${skyBlue}  9.生成Vmess链接${none}"
+    echo -e "${skyBlue}  9.生成Vmess、二维码链接${none}"
     echo -e "${skyBlue}  10.返回主目录${none}"
     echo -e "${red}  11.退出脚本${none}"
     echo -e "${purple}===============================${none}"
@@ -460,7 +460,7 @@ init(){
         echo -e "${skyBlue}  3.检测nginx是否安装并配置${none}"
         echo -e "${skyBlue}  4.检测https是否安装并配置${none}"
         echo -e "${skyBlue}  5.检测V2Ray是否安装并配置${none}"
-        echo -e "${skyBlue}  6.生成vmess链接${none}"
+        echo -e "${skyBlue}  6.生成vmess、二维码链接${none}"
         echo -e "${skyBlue}  7.启动服务并退出脚本${none}"
         echo -e "${purple}===============================${none}"
         automationFun 1

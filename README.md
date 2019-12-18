@@ -5,6 +5,19 @@
 [点击此链接加入电报群](https://t.me/joinchat/L68JqRQMroH78jqLI1HdcA)
 * * *
 # 目录
+- [备注（使用前查看）](#备注使用前查看)
+  * [1.推荐使用v2ray+CDN的方式](#1推荐使用v2ray-cdn的方式)
+    + [1.优点](#1优点)
+    + [2.缺点](#2缺点)
+    + [3.数据包解析](#3数据包解析)
+    + [4.建议](#4建议)
+  * [2.速度首选V2Ray TCP方式](#2速度首选v2ray-tcp方式)
+  * [3.本地网络环境不稳定首选mKCP](#3本地网络环境不稳定首选mkcp)
+  * [4.目前不推荐使用ss、ssr](#4目前不推荐使用ss-ssr)
+- [维护进程[todo List]](#维护进程todo-list)
+  * [1.一键脚本](#1一键脚本)
+    + [1.自动模式](#1自动模式)
+    + [2.手动模式](#2手动模式)
 - [技能点列表](#技能点列表)
 - [一键脚本](#一键脚本)
   * [1.自动模式](#1自动模式)
@@ -33,23 +46,87 @@
 - [优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
 - [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 * * *
-# 备注
-- 1.
+
+# 备注（使用前查看）
+## 1.推荐使用v2ray+CDN的方式
+### 1.优点
+- 1.防止境外vps被墙
+- 2.由于CDN的方式是通过完全模拟正常网站，也可以是说本来就是一个正常的网站，又使用正常的CDN厂商（全球最大），有很多的外贸以及国外公司使用，墙一般不会敢ban这些ip
+- 3.可以用于被墙vps的搭建
+- 4.相对来说更加安全
+
+### 2.缺点
+- 1.配置过程复杂
+- 2.知识点相对比较多
+- 3.维护相对复杂
+- 4.由于CloudFlare不是国内的CDN厂商，速度相对来说慢一些（可以尝试CNAME优化方案[CNAME因为要使用国内的dns，相对于来说有风险]）
+
+### 3.数据包解析
+- 1.首先运营商以及GFW获取到的数据包，无法作为中间人进行攻击（中间人可以直接获取到v2ray的加密数据包）
+- 2.即使获取到数据包之后，还需要对数据包进行解密，所以证书推荐使用第三方的，而不使用官方提供的，用了TLS加密的数据不是说不能解密，而是需要耗费巨大的时间以及运算能力
+- 3.解密完成后 还需要对v2ray加密的数据进行解密、嗅探等操作
+- 4.不建议使用不明来历的机场，如果机场主是国内的某些关系户，你用的代理相当于实名翻墙（违法）
+
+### 4.建议
+- 1.注意隐私保护（今日不同往日）
+- 2.建议只用做学习以及娱乐使用，不建议发表一些敏感言论（不管是诋毁自己所在的国家，还是诋毁别的国家）
+- 3.不建议人身攻击（有被起底的先例）
+
+## 2.速度首选V2Ray TCP方式
+- 1.本脚本目前不支持（后续可能会添加）
+
+## 3.本地网络环境不稳定首选mKCP
+- 1.本脚本目前不支持（后续可能会添加）
+
+## 4.目前不推荐使用ss、ssr
+
+# 维护进程[todo List]
+## 1.一键脚本
+### 1.自动模式
+- [x] 1.检查系统版本是否为CentOS
+- [x] 2.安装工具包
+- [x] 3.检测nginx是否安装并配置
+- [x] 4.检测https是否安装并配置
+- [x] 5.检测V2Ray是否安装并配置
+- [x] 6.生成vmess、二维码链接
+- - [ ] 1.shadowrocket
+- - [ ] 2.Quantumult
+- [x] 7.启动服务并退出脚本
+- [ ] 8.HTTPS续签
+- [ ] 9.开机自启动
+- [ ] 10.面板搭建
+- - [ ] 1.在线创建、删除、修改账户
+- - [ ] 2.一键管理Nginx、TLS
+- - [ ] 3.开机自启动
+
+### 2.手动模式
+- [x] 1.检查系统版本是否为CentOS
+- [x] 2.安装工具包
+- [x] 3.检测nginx是否安装并配置
+- [x] 4.检测https是否安装并配置
+- [x] 5.检测V2Ray是否安装并配置
+- [x] 6.启动服务并退出脚本
+- [x] 7.卸载安装的所有内容
+- [x] 8.查看配置文件路径
+- [x] 9.生成Vmess链接
+- [x] 10.返回主目录
+- [x] 11.退出脚本
+
+## 1.手动搭建
+- [x] 手动搭建
+
 # 技能点列表
 - [bandwagonhost[centos7]链接一](https://bandwagonhost.com)
 - [bandwagonhost[centos7]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
-- [cloudflare](cloudflare.com)【CDN】
+- [freenom](https://freenom.com/)【免费域名】
 - [godaddy](https://www.godaddy.com/)【域名厂商】
+- [cloudflare](cloudflare.com)【CDN】
 - [letsencrypt](https://letsencrypt.org/)【HTTPS】
 - [Nginx](https://www.nginx.com/)【反向代理】
 - [V2Ray](v2ray.com)【代理工具】
 
 # 一键脚本
-- 此脚本在Google cloud测试成功，系统为Centos7（后续会支持其余unix系统）
-- 执行一键脚本的前提是下面的 【1.准备工作】 完成并正确
-- 支持一键搭建、支持部分手动模块
-- 后续会支持升级、生成客户端链接（shadowrocket、Quantumult）、开机自启、HTTPS续签
-- 后续支持增加面板功能（在线创建、删除、修改账户，一键管理Nginx、TLS等）
+- <span style='color:red'>执行一键脚本的前提是下面的 【1.准备工作】完成并正确</span>
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh)
 ```
