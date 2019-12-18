@@ -110,7 +110,8 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 
 # 1.准备工作
 ## 1.注册[cloudflare](cloudflare.com)
-## 2.注册[godaddy](https://www.godaddy.com/)并购买域名
+## 2.注册[godaddy](https://www.godaddy.com/)并购买域名或者使用免费域名[freenom](https://freenom.com/)
+- 这里使用godaddy作为示例
 - 域名可选择xyz结尾的国际域名，可采用多字符乱码的方式组合域名，(比如wk1c.xyz)首年大概8RMB左右，第二年可以直接买一个新的。
 
 ## 3.修改godaddy域名的DNS解析
