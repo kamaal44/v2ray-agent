@@ -33,6 +33,8 @@
 - [优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
 - [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 * * *
+# 备注
+- 1.
 # 技能点列表
 - [bandwagonhost[centos7]链接一](https://bandwagonhost.com)
 - [bandwagonhost[centos7]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
@@ -53,7 +55,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 ```
 
 ## 1.自动模式
-- 只需要输入y以及域名即可
+- 只需要输入域名即可
 - 仔细检查【1.准备工作】正确
 <img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本自动模式.png" width=400>
 

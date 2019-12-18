@@ -51,7 +51,7 @@ installNginx(){
     if [ -z "$existProcessNginx" ] && [ -z "$existNginx" ]
     then
         echo -e "${skyBlue}安装Nginx中，如遇到是否安装输入y${none}"
-        yum install nginx
+        yum -y install nginx
         rm -rf /etc/nginx/nginx.conf
         wget -P /etc/nginx/  https://raw.githubusercontent.com/mack-a/v2ray-agent/master/config/nginx.conf
         echo -e "${green}步骤二：Nginx安装成功，执行下一步 ${none}"
@@ -293,7 +293,7 @@ installTools(){
     if [ -z "$existProcessWget" ] && [ -z "$existWget" ]
     then
         echo -e "${skyBlue}安装wget中...${none}"
-        yum install wget
+        yum -y install wget
     else
         echo
     fi
@@ -301,19 +301,19 @@ installTools(){
     if [ -z "$existUnzip" ]
     then
         echo -e "${skyBlue}安装zip中...${none}"
-        yum install unzip
+        yum -y install unzip
     fi
     existSocat=`command -v socat`
     if [ -z "$existSocat" ]
     then
         echo -e "${skyBlue}安装socat中...${none}"
-        yum install socat
+        yum -y install socat
     fi
     existJq=`command -v jq`
     if [ -z "$existJq" ]
     then
         echo -e ${skyBlue}安装jq中...${none}
-        yum install jq
+        yum -y install jq
     fi
     existNode=`command -v node`
     if [ -z "$existNode" ]
@@ -328,7 +328,7 @@ installTools(){
     if [ -z "$existQrencode" ]
     then
         echo -e ${skyBlue}安装qrencode中...${none}
-        yum install qrencode
+        yum -y install qrencode
     fi
 }
 unInstall(){
