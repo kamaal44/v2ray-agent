@@ -51,7 +51,7 @@
 # 维护进程[todo List]
 ## 1.一键脚本
 ### 1.自动模式
-- [x] 1.检查系统版本是否为CentOS
+- [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
 - [x] 2.安装工具包
 - [x] 3.检测nginx是否安装并配置
 - [x] 4.检测https是否安装并配置
@@ -70,7 +70,7 @@
 - - [ ] 5.日志查看
 
 ### 2.手动模式
-- [x] 1.检查系统版本是否为CentOS
+- [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
 - [x] 2.安装工具包
 - [x] 3.检测nginx是否安装并配置
 - [x] 4.检测https是否安装并配置
@@ -86,8 +86,8 @@
 - [x] 手动搭建
 
 # 技能点列表
-- [bandwagonhost[centos7]链接一](https://bandwagonhost.com)
-- [bandwagonhost[centos7]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
+- [bandwagonhost[Ubuntu、Centos、Debian]链接一](https://bandwagonhost.com)
+- [bandwagonhost[Ubuntu、Centos、Debian]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
 - [freenom](https://freenom.com/)【免费域名】
 - [godaddy](https://www.godaddy.com/)【域名厂商】
 - [cloudflare](cloudflare.com)【CDN】
