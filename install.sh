@@ -327,7 +327,6 @@ unInstall(){
     ps -ef|grep v2ray|grep -v grep|awk '{print $2}'|xargs kill -9
     if [[ "${release}" -eq "ubuntu" ||  "${release}" -eq "debian" ]]
     then
-        echo 'GO'
         sed -i 's/. "\/root\/.acme.sh\/acme.sh.env"//g' `grep '. "/root/.acme.sh/acme.sh.env"' -rl /root/.bashrc`
     fi
     . /root/.bashrc
@@ -432,7 +431,7 @@ automationFun(){
 }
 
 init(){
-    ${echoType} "${purple}目前此脚本在GCP CentOS7上面测试通过${none}"
+    ${echoType} "${purple}目前此脚本支持Ubuntu、Centos、Debian${none}"
     ${echoType} "${purple}===============================${none}"
     ${echoType} "${purple}支持两种模式：${none}"
     ${echoType} "${red}    1.自动模式${none}"
@@ -444,7 +443,7 @@ init(){
     then
         ${echoType} "${purple}===============================${none}"
         ${echoType} "${purple}自动模式会执行以下内容:${none}"
-        ${echoType} "${skyBlue}  1.检查系统版本是否为CentOS${none}"
+        ${echoType} "${skyBlue}  1.检查系统版本是否为Ubuntu、Centos、Debian${none}"
         ${echoType} "${skyBlue}  2.安装工具包${none}"
         ${echoType} "${skyBlue}  3.检测nginx是否安装并配置${none}"
         ${echoType} "${skyBlue}  4.检测https是否安装并配置${none}"
