@@ -85,7 +85,7 @@ const formatResult = () => {
             });
         });
     });
-    configArr.push(configArr[0]);
+    // configArr.push(configArr[0]);
     configArr = configArr.map(v => {
         return `vmess://${Buffer.from(JSON.stringify(v)).toString('base64')}`;
     });
