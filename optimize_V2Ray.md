@@ -26,7 +26,7 @@
     + [2.移动](#2移动)
     + [3.hk直连](3hk直连)
     + [4.自动化脚本测试线路](#4自动化脚本测试线路)
-- [4.dnsmasq 实现CNAME方式【更加隐私一些 只适用于CDN方式】](#4dnsmasq 实现CNAME方式更加隐私一些 只适用于CDN方式)
+- [4.dnsmasq 实现CNAME方式](#4dnsmasq 实现CNAME方式)
   * [1.准备工作](#1准备工作)
   * [2.安装](#2安装)
   * [3.修改配置文件](#3修改配置文件)
@@ -183,7 +183,8 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/pi
 104.24.105.3 100ms 【不丢包】
 ```
 
-# 4.dnsmasq 实现CNAME方式【更加隐私一些 只适用于CDN方式】
+# 4.dnsmasq 实现CNAME方式
+- 更加隐私一些 只适用于CDN方式
 - 使用自定义DNS服务，类似于本地配置hosts文件
 - 需要配置不同的二级域名（三级域名）来进行解析
 
