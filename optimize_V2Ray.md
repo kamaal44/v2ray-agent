@@ -26,6 +26,12 @@
     + [2.移动](#2移动)
     + [3.hk直连](3hk直连)
     + [4.自动化脚本测试线路](#4自动化脚本测试线路)
+- [4.dnsmasq 实现CNAME方式【更加隐私一些 只适用于CDN方式】](#4dnsmasq 实现CNAME方式更加隐私一些 只适用于CDN方式)
+  * [1.准备工作](#1准备工作)
+  * [2.安装](#2安装)
+  * [3.修改配置文件](#3修改配置文件)
+  * [4.重启dnsmasq](#4重启dnsmasq)
+  * [5.测试&使用](#5测试&使用)
 * * *
 
 # 1.偶尔断流
@@ -175,4 +181,89 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/pi
 ```
 104.16.192.0 40ms 【丢包严重】
 104.24.105.3 100ms 【不丢包】
+```
+
+# 4.dnsmasq 实现CNAME方式【更加隐私一些 只适用于CDN方式】
+- 使用自定义DNS服务，类似于本地配置hosts文件
+- 需要配置不同的二级域名（三级域名）来进行解析
+
+## 1.准备工作
+- 需要一台中国大陆的服务器【最好，但是国外的可以用。但是会拖慢DNS解析的速度】
+- 防火墙需要开放53端口
+
+## 2.安装
+- 1.Centos/RHEL
+```
+yum -y install dnsmasq
+```
+
+- 2.Ubuntu/Debian
+```
+apt-get install dnsmasq
+```
+
+## 3.修改配置文件
+```
+# 不使用/etc/hosts
+no-hosts
+
+# server为上游DNS服务器
+# 同时查询配置的DNS服务器，哪一个快使用哪一个
+all-servers
+server=223.5.5.5
+server=8.8.8.8
+
+# cn域名通过114解析
+server=/cn/114.114.114.114
+
+# 一下都是实现hosts文件功能 挑选一种即可
+# 添加hosts文件，用来实现类似于hosts文件的功能
+addn-hosts=/etc/dnsmasq.hosts
+
+# 指定域名解析到特定ip中【下面填写自己的域名】
+# 同理Nginx也需要修改
+# 如果不是泛域名证书，还需要重新配置新加入的域名证书
+address=/mobile.xxx.com/39.156.69.100
+address=/unicom.xxx.com/39.156.69.101
+
+# 泛域名解析
+# address=/baidu.com/39.156.110.100
+```
+
+## 4.重启dnsmasq
+```
+systemctl restart dnsmasq
+```
+## 5.测试&使用
+- 1.测试
+```
+# xx.xx.xx.xx为配置dnsmasq服务的ip
+# mobile.xxx.com 后面为自己的域名
+➜ ~ dig @xx.xx.xx.xx mobile.xxx.com
+
+; <<>> DiG 9.10.6 <<>> @xx.xx.xx.xx mobile.xxx.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 43056
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;mobile.xxx.com.	IN	A
+
+# 下面是结果，如果和自己配置的一样则正确
+;; ANSWER SECTION:
+mobile.xxx.com. 0	IN	A	198.41.214.162
+
+;; Query time: 42 msec
+;; SERVER: xx.xx.xx.xx#53(xx.xx.xx.xx)
+;; WHEN: Mon Dec 23 16:30:29 CST 2019
+;; MSG SIZE  rcvd: 70
+```
+
+- 2.使用
+```
+需要手动修改自己本地的客户端的DNS配置，各终端请自行Google
 ```
