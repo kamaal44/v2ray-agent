@@ -219,7 +219,7 @@ server=/cn/114.114.114.114
 
 # 一下都是实现hosts文件功能 挑选一种即可
 # 添加hosts文件，用来实现类似于hosts文件的功能
-addn-hosts=/etc/dnsmasq.hosts
+# addn-hosts=/etc/dnsmasq.hosts
 
 # 指定域名解析到特定ip中【下面填写自己的域名】
 # 同理Nginx也需要修改
