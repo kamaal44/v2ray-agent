@@ -262,7 +262,7 @@ https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 ## 1.推荐使用v2ray+CDN的方式
 ### 1.优点
 - 1.防止境外vps被墙
-- 2.由于CDN的方式是通过完全模拟正常网站，也可以是说本来就是一个正常的网站，又使用正常的CDN厂商（全球最大），有很多的外贸以及国外公司使用，墙一般不会敢ban这些ip
+- 2.由于CDN的方式是通过完全模拟正常网站，也可以是说本来就是一个正常的网站，同时又使用正常的CDN厂商（全球最大），有很多的外贸以及国外公司使用，墙一般不敢ban这些ip
 - 3.可以用于被墙vps的搭建
 - 4.相对来说更加安全
 
@@ -270,7 +270,7 @@ https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 - 1.配置过程复杂
 - 2.知识点相对比较多
 - 3.维护相对复杂
-- 4.由于CloudFlare不是国内的CDN厂商，速度相对来说慢一些（可以尝试CNAME优化方案[CNAME因为要使用国内的dns，相对于来说有风险]）
+- 4.由于CloudFlare不是国内的CDN厂商，速度相对来说慢一些（可以尝试CNAME优化方案[CNAME因为要使用国内的dns，相对于来说有风险]、或者使用自定义dns服务器[分享相对小一些]）
 
 ### 3.数据包解析
 - 1.首先运营商以及GFW获取到的数据包，无法作为中间人进行攻击（中间人可以直接获取到v2ray的加密数据包）
