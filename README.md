@@ -70,6 +70,7 @@
 - - [ ] 5.日志查看
 - [ ] 11.docker
 - [x] 12.自定义DNS服务器替换CNAME优化方案
+- [ ] 13.k8s+docker一键构建V2Ray Nginx【目前在做】
 
 ### 2.手动模式
 - [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
