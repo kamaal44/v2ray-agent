@@ -48,9 +48,6 @@
 - [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 * * *
 
-## 1.手动搭建
-- [x] 手动搭建
-
 # 技能点列表
 - [bandwagonhost[Ubuntu、Centos、Debian]链接一](https://bandwagonhost.com)
 - [bandwagonhost[Ubuntu、Centos、Debian]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
@@ -291,3 +288,6 @@ https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 - [x] 9.生成Vmess链接
 - [x] 10.返回主目录
 - [x] 11.退出脚本
+
+## 1.手动搭建
+- [x] 手动搭建
