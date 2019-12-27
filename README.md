@@ -5,10 +5,6 @@
 [点击此链接加入电报群](https://t.me/joinchat/L68JqRQMroH78jqLI1HdcA)
 * * *
 # 目录
-- [维护进程[todo List]](#维护进程todo-list)
-  * [1.一键脚本](#1一键脚本)
-    + [1.自动模式](#1自动模式)
-    + [2.手动模式](#2手动模式)
 - [技能点列表](#技能点列表)
 - [一键脚本](#一键脚本)
   * [1.自动模式](#1自动模式)
@@ -42,48 +38,15 @@
   * [2.速度首选V2Ray TCP方式](#2速度首选v2ray-tcp方式)
   * [3.本地网络环境不稳定首选mKCP](#3本地网络环境不稳定首选mkcp)
   * [4.目前不推荐使用ss、ssr](#4目前不推荐使用ss-ssr)
+- [维护进程[todo List]](#维护进程todo-list)
+  * [1.一键脚本](#1一键脚本)
+    + [1.自动模式](#1自动模式)
+    + [2.手动模式](#2手动模式)
 * * *
 ### 优化方案
 - [优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
 - [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 * * *
-
-# 维护进程[todo List]
-## 1.一键脚本
-### 1.自动模式
-- [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
-- [x] 2.安装工具包
-- [x] 3.检测nginx是否安装并配置
-- [x] 4.检测https是否安装并配置
-- [x] 5.检测V2Ray是否安装并配置
-- [x] 6.生成vmess、二维码链接
-- - [x] 1.shadowrocket
-- - [ ] 2.Quantumult
-- [x] 7.启动服务并退出脚本
-- [ ] 8.HTTPS续签
-- [ ] 9.开机自启动
-- [ ] 10.面板搭建
-- - [ ] 1.在线创建、删除、修改账户
-- - [ ] 2.一键管理Nginx、TLS
-- - [ ] 3.开机自启动
-- - [ ] 4.流量控制
-- - [ ] 5.日志查看
-- [ ] 11.docker
-- [x] 12.自定义DNS服务器替换CNAME优化方案
-- [ ] 13.k8s+docker一键构建V2Ray Nginx【目前在做】
-
-### 2.手动模式
-- [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
-- [x] 2.安装工具包
-- [x] 3.检测nginx是否安装并配置
-- [x] 4.检测https是否安装并配置
-- [x] 5.检测V2Ray是否安装并配置
-- [x] 6.启动服务并退出脚本
-- [x] 7.卸载安装的所有内容
-- [x] 8.查看配置文件路径
-- [x] 9.生成Vmess链接
-- [x] 10.返回主目录
-- [x] 11.退出脚本
 
 ## 1.手动搭建
 - [x] 手动搭建
@@ -291,3 +254,40 @@ https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 - 1.本脚本目前不支持（后续可能会添加）
 
 ## 4.目前不推荐使用ss、ssr
+
+# 维护进程[todo List]
+## 1.一键脚本
+### 1.自动模式
+- [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
+- [x] 2.安装工具包
+- [x] 3.检测nginx是否安装并配置
+- [x] 4.检测https是否安装并配置
+- [x] 5.检测V2Ray是否安装并配置
+- [x] 6.生成vmess、二维码链接
+- - [x] 1.shadowrocket
+- - [ ] 2.Quantumult
+- [x] 7.启动服务并退出脚本
+- [ ] 8.HTTPS续签
+- [ ] 9.开机自启动
+- [ ] 10.面板搭建
+- - [ ] 1.在线创建、删除、修改账户
+- - [ ] 2.一键管理Nginx、TLS
+- - [ ] 3.开机自启动
+- - [ ] 4.流量控制
+- - [ ] 5.日志查看
+- [x] 11.docker[开箱即用]
+- [x] 12.自定义DNS服务器替换CNAME优化方案
+- [ ] 13.k8s+docker一键构建V2Ray Nginx【目前在做】
+
+### 2.手动模式
+- [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
+- [x] 2.安装工具包
+- [x] 3.检测nginx是否安装并配置
+- [x] 4.检测https是否安装并配置
+- [x] 5.检测V2Ray是否安装并配置
+- [x] 6.启动服务并退出脚本
+- [x] 7.卸载安装的所有内容
+- [x] 8.查看配置文件路径
+- [x] 9.生成Vmess链接
+- [x] 10.返回主目录
+- [x] 11.退出脚本
