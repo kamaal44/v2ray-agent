@@ -6,9 +6,11 @@
 * * *
 # 目录
 - [技能点列表](#技能点列表)
-- [一键脚本](#一键脚本)
+- [一.一键脚本](#一一键脚本)
   * [1.自动模式](#1自动模式)
   * [2.手动模式](#2手动模式)
+  
+- [二.图文安装](#2图文安装)
 - [1.准备工作](#1准备工作)
   * [1.注册cloudflare](#1注册cloudflare)
   * [2.注册godaddy并购买域名](#2注册godaddy并购买域名)
@@ -58,7 +60,7 @@
 - [Nginx](https://www.nginx.com/)【反向代理】
 - [V2Ray](v2ray.com)【代理工具】
 
-# 一键脚本
+# 一.一键脚本
 - <span style='color:red'>执行一键脚本的前提是下面的 【1.准备工作】完成并正确</span>
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh)
@@ -73,6 +75,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 - 可以指定需要执行的内容
 <img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本手动模式.png" width=400>
 
+# 二.图文安装
 # 1.准备工作
 ## 1.注册[cloudflare](cloudflare.com)
 ## 2.注册[godaddy](https://www.godaddy.com/)并购买域名或者使用免费域名[freenom](https://freenom.com/)
