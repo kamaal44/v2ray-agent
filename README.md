@@ -9,7 +9,7 @@
 - [一.一键脚本](#一一键脚本)
   * [1.自动模式](#1自动模式)
   * [2.手动模式](#2手动模式)
-  
+
 - [二.图文安装](#2图文安装)
 - [1.准备工作](#1准备工作)
   * [1.注册cloudflare](#1注册cloudflare)
@@ -44,6 +44,7 @@
   * [1.一键脚本](#1一键脚本)
     + [1.自动模式](#1自动模式)
     + [2.手动模式](#2手动模式)
+
 * * *
 ### 优化方案
 - [优化v2ray【断流、CNAME自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
@@ -74,6 +75,8 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 ## 2.手动模式
 - 可以指定需要执行的内容
 <img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本手动模式.png" width=400>
+
+* * *
 
 # 二.图文安装
 # 1.准备工作
