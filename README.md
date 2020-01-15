@@ -53,7 +53,10 @@
 - [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 
 ### Docker
-- [点击这里查看](https://github.com/mack-a/v2ray-agent/blob/master/Docker/Docker.md)
+- Docker需要在另一个项目查看，功能包含流量统计、访问记录统计，面板功能以后放到Docker中，不与目前的脚本合并到一块。
+- 面板功能部署起来会很复杂，使用脚本部署要考虑很多东西，Docker只需要构建镜像或者使用构建好的即可，方便简单。
+- Docker相关内容我会放到另一个项目中进行展示，Docker构建好的镜像则托管在 【https://hub.docker.com/】中。
+- [点击这里查看](https://github.com/mack-a/V2Ray-WebSocket-Docker)
 * * *
 
 # 技能点列表
@@ -282,9 +285,9 @@ https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 - - [ ] 3.开机自启动
 - - [ ] 4.流量控制
 - - [ ] 5.日志查看
-- [x] 11.docker[开箱即用]
+- [x] 11.Docker[开箱即用]
 - [x] 12.自定义DNS服务器替换CNAME优化方案
-- [ ] 13.k8s+docker一键构建V2Ray Nginx【目前在做】
+- [ ] 13.k8s+docker一键构建V2Ray Nginx
 
 ### 2.手动模式
 - [x] 1.检查系统版本是否为Ubuntu、Centos、Debian
