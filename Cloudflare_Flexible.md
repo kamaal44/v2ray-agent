@@ -118,7 +118,3 @@ https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 ## 2.windows
 - 下载v2rayN[点我下载](https://github.com/2dust/v2rayN/releases/download/2.44/v2rayN.zip)
 - 使用方法 [点我查看](https://github.com/233boy/v2ray/wiki/V2RayN%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B)
-
-<hr/>
-<h3>到这里就配置完成，可以测试是否能上被q的网站,如果可以使用可以测试上方的优化方案</h3>
-<hr/>
