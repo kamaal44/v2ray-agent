@@ -70,6 +70,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 
 # 自建教程
 # 方法1
+- 只使用CloudFlare的证书
 - 客户端->CloudFlare使用TLS+vmess加密，CloudFlare->VPS只使用vmess，[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Cloudflare_Flexible.md)
 - 不需要自己维护自己的https证书
 - 少一步解析证书的过程，速度理论上会快一点
