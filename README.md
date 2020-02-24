@@ -86,7 +86,14 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 
 * * *
 
-# 1.准备工作
+- 方法1
+# 只使用cloudflare的证书[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Flexible.md)
+- 不需要自己维护自己的https证书
+- 少一步解析证书的过程，速度理论上会快一点
+
+
+- 方法2
+# 1.准备工作()
 ## 1.注册[cloudflare](cloudflare.com)
 ## 2.注册[godaddy](https://www.godaddy.com/)并购买域名或者使用免费域名[freenom](https://freenom.com/)
 - 这里使用godaddy作为示例
