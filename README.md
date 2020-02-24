@@ -14,6 +14,7 @@
 - [一键脚本](#一键脚本)
   * [1.自动模式](#1自动模式)
   * [2.手动模式](#2手动模式)
+- [自建教程](#自建教程)
 - [备注](#备注使用前查看)
   * [1.推荐使用v2ray+CDN的方式](#1推荐使用v2ray-cdn的方式)
       + [1.优点](#1优点)
@@ -67,6 +68,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 
 * * *
 
+# 自建教程
 # 方法1
 - 客户端->CloudFlare使用TLS+vmess加密，CloudFlare->VPS只使用vmess，[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Cloudflare_Flexible.md)
 - 不需要自己维护自己的https证书
