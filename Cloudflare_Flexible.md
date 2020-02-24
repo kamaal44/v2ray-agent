@@ -1,3 +1,29 @@
+# 目录
+- [技能点列表](#技能点列表)
+- [一键脚本](#一键脚本)
+  * [1.自动模式](#1自动模式)
+  * [2.手动模式](#2手动模式)
+- [1.准备工作](#1准备工作)
+  * [1.注册cloudflare](#1注册cloudflare)
+  * [2.注册godaddy并购买域名](#2注册godaddy并购买域名)
+  * [3.修改godaddy域名的DNS解析](#3修改godaddy域名的dns解析)
+    + [1.登录cloudflare，添加域名](#1登录cloudflare添加域名)
+    + [2.选择套餐](#2选择套餐)
+    + [3.根据提示修改godaddy的dns解析](#3根据提示修改godaddy的dns解析)
+  * [4.增加cloudflare域名解析](#4增加cloudflare域名解析)
+  * [5.修改godaddy SSL/TLS](#5修改godaddy-ssltls)
+- [2.vps配置Nginx](#2vps配置nginx)
+  * [1.安装Nginx](#1安装Nginx)
+  * [2.nginx配置文件](#2nginx配置文件)
+- [3.配置v2ray](#3配置v2ray)
+  * [1.安装v2ray](#1安装v2ray)
+  * [2.v2ray配置文件](#v2ray配置文件)
+  * [3.启动v2ray](#3启动v2ray)
+- [4.客户端](#4客户端)
+  * [1.MacOS](#1macos)
+  * [2.windows](#2windows)
+
+
 # 技能点列表
 - [bandwagonhost[Ubuntu、Centos、Debian]链接一](https://bandwagonhost.com)
 - [bandwagonhost[Ubuntu、Centos、Debian]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
@@ -38,7 +64,7 @@
 - 如果vps选择使用https，需要把类型修改为Flexible
 <img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/cloudflare_tls_Flexible.png" width=400>
 
-# 2.vps配置Nginx、https
+# 2.vps配置Nginx
 ## 1.安装Nginx
 ```
 yum install nginx

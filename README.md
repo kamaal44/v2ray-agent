@@ -4,6 +4,7 @@
 - 如果需要手动搭建并且学习搭建步骤，可以从 [1.准备工作](#1准备工作) 开始查看。
 - 同时还包含优化方案（CNAME优化、DNS优化、断流优化、bbr、bbr plus【阻塞拥堵算法，加快对流量的处理】）、其余设置（开机启动）、docker镜像。
 - 未来还会加上docker脚本、面板、k8s等容器方面的内容。
+- 世界就是这样，当你开始思考时，你已经是小部分中的一员了。祝大家使用愉快。
 
 ## 有问题或者有想要加的功能可以在issus提交或者可以加入下方的电报群
 [点击此链接加入电报群](https://t.me/joinchat/L68JqRQMroH78jqLI1HdcA)
@@ -13,26 +14,6 @@
 - [一键脚本](#一键脚本)
   * [1.自动模式](#1自动模式)
   * [2.手动模式](#2手动模式)
-- [1.准备工作](#1准备工作)
-  * [1.注册cloudflare](#1注册cloudflare)
-  * [2.注册godaddy并购买域名](#2注册godaddy并购买域名)
-  * [3.修改godaddy域名的DNS解析](#3修改godaddy域名的dns解析)
-    + [1.登录cloudflare，添加域名](#1登录cloudflare添加域名)
-    + [2.选择套餐](#2选择套餐)
-    + [3.根据提示修改godaddy的dns解析](#3根据提示修改godaddy的dns解析)
-  * [4.增加cloudflare域名解析](#4增加cloudflare域名解析)
-  * [5.修改godaddy SSL/TLS](#5修改godaddy-ssltls)
-- [2.vps配置Nginx、https](#2vps配置nginxhttps)
-  * [1.安装Nginx](#1安装Nginx)
-  * [2.nginx配置文件](#2nginx配置文件)
-  * [3.生成https](#3生成https)
-- [3.配置v2ray](#3配置v2ray)
-  * [1.安装v2ray](#1安装v2ray)
-  * [2.v2ray配置文件](#v2ray配置文件)
-  * [3.启动v2ray](#3启动v2ray)
-- [4.客户端](#4客户端)
-  * [1.MacOS](#1macos)
-  * [2.windows](#2windows)
 - [备注](#备注使用前查看)
   * [1.推荐使用v2ray+CDN的方式](#1推荐使用v2ray-cdn的方式)
       + [1.优点](#1优点)
