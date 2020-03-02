@@ -2,7 +2,7 @@
 - 本项目旨在更好的学习新知识，采用CDN+TLS+Nginx+v2ray进行伪装并突破防火墙。
 - 本教程一键脚本适合全新机器以及小白用户。
 - 如果需要手动搭建并且学习搭建步骤，可以从 [自建教程](#自建教程) 开始查看。
-- 同时还包含优化方案（CNAME优化、DNS优化、断流优化、bbr、bbr plus【阻塞拥堵算法，加快对流量的处理】）、其余设置（开机启动）、docker镜像。
+- 同时还包含优化方案（CNAME优化、DNS优化、断流优化、bbr、bbr plus【阻塞拥堵算法，加快对流量的处理】）、其余设置（开机启动）、docker镜像、防火墙设置。
 - 未来还会加上docker脚本、面板、k8s等容器方面的内容。
 - 世界就是这样，当你开始思考时，你已经是小部分中的一员了。祝大家使用愉快。
 
@@ -15,6 +15,7 @@
   * [1.自动模式](#1自动模式)
   * [2.手动模式](#2手动模式)
 - [自建教程](#自建教程)
+- [防护墙设置](#防火墙设置点击查看)
 - [备注](#备注使用前查看)
   * [1.推荐使用v2ray+CDN的方式](#1推荐使用v2ray-cdn的方式)
       + [1.优点](#1优点)
@@ -79,6 +80,8 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 - 需要自己生成https证书，并自己维护，一般使用let's encrypt生成有效期为三个月。
 - 客户端->CloudFlare使用CLoudFlare TLS+vmess加密，CloudFlare->VPS使用let's encrypt TLS+vmess加密，[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Cloudflare_Full.md)
 - 与方法1不同的是，CloudFlare和VPS通讯时也会使用TLS加密。两个方法安全方面区别不是很大。
+
+# 防火墙设置[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/firewall.md)
 
 # 备注
 ## 1.推荐使用v2ray+CDN的方式
