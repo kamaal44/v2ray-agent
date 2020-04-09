@@ -84,7 +84,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 - 与方法1不同的是，CloudFlare和VPS通讯时也会使用TLS加密。两个方法安全方面区别不是很大。
 
 # 防火墙设置[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/firewall.md)
-# 免费账号[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)
+# 免费账号【已无法使用】[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)
 # 备注
 ## 1.推荐使用v2ray+CDN的方式
 ### 1.优点
