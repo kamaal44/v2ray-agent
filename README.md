@@ -72,16 +72,26 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 * * *
 
 # 自建教程
-# 方法1(Flexible)
+# 1.V2Ray
+- ios端建议使用Quantumult，表现要比Trojan好。
+
+## 方法1(Flexible)【建议使用该方法】
 - 只使用CloudFlare的证书
 - 客户端->CloudFlare使用TLS+vmess加密，CloudFlare->VPS只使用vmess，[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Cloudflare_Flexible.md)
 - 不需要自己维护自己的https证书
 - 少一步解析证书的过程，速度理论上会快一点
 
-# 方法2(Full)
+## 方法2(Full)
 - 需要自己生成https证书，并自己维护，一般使用let's encrypt生成有效期为三个月。
 - 客户端->CloudFlare使用CLoudFlare TLS+vmess加密，CloudFlare->VPS使用let's encrypt TLS+vmess加密，[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Cloudflare_Full.md)
 - 与方法1不同的是，CloudFlare和VPS通讯时也会使用TLS加密。两个方法安全方面区别不是很大。
+
+# 2.Trojan
+- 需要自己生成证书
+- 客户端->使用自己生成的tls加密无其他加密->VPS,[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Trojan.md)
+- 少一层加密，理论速度会快一些。
+- 需要自己维护证书。
+- [官方Github](https://github.com/trojan-gfw/trojan)
 
 # 防火墙设置[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/firewall.md)
 # 免费账号【已无法使用】[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)
