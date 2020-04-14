@@ -76,6 +76,98 @@ systemctl start trojan
 systemctl stop trojan
 ```
 
-# 4.配置与V2Ray并存【并保证网站伪装】【待完善】
+# 4.配置与V2Ray并存【并保证网站伪装】
 - 1.需要配合CloudFlare
 - 2.需要使用【方法1】配置V2Ray[点此查看](https://github.com/mack-a/v2ray-agent/blob/master/Cloudflare_Flexible.md)
+
+## 1.思路
+- 1.配置两个不同的二级域名
+- 2.CloudFlare对V2Ray的二级域名开启Proxy【☁️】
+- 3.SSL/TLS mode 修改为Fiexible
+
+## 2.示例
+### 1.CloudFlare SSL/TLS mode
+<img src='https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/cloudflare_tls_Flexible.png' width=400>
+
+### 2.CloudFlare DNS Trojan&V2Ray
+- 1.blog2 指向Trojan的443
+- 2.blog 则通过CloudFlare指向VPS的80
+- 3.指向的ip是一样的，一个通过CloudFlare代理一个则不代理。
+
+<img src='https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/CloudFlare_Trojan_V2Ray.png' width=400>
+
+### 3.Nginx config
+```
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 2048;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    include /etc/nginx/conf.d/*.conf;
+
+   server {
+       	listen       80;
+       	# 这里是你的域名
+       	server_name  blog.xxx.xyz;
+       	root         /usr/share/nginx/html;
+
+       	location / {
+
+       	}
+   	    location ~ /.well-known {
+        	allow all;
+        }
+        # 这里是V2Ray
+        location /main {
+            proxy_redirect off;
+            proxy_pass http://127.0.0.1:31290;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            # proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+   }
+}
+
+```
+### 4.Trojan则不用修改
