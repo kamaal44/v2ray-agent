@@ -94,7 +94,7 @@ systemctl stop trojan
 - 2.blog 则通过CloudFlare指向VPS的80
 - 3.指向的ip是一样的，一个通过CloudFlare代理一个则不代理。
 
-<img src='https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/CloudFlare_Trojan_V2Ray.png' width=400>
+<img src='https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/CloudFlare Trojan V2Ray.png' width=400>
 
 ### 3.Nginx config
 ```
