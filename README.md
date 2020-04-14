@@ -90,6 +90,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 - 需要自己生成证书
 - 客户端->使用自己生成的tls加密无其他加密->VPS,[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/Trojan.md)
 - 少一层加密，理论速度会快一些。
+- 速度取决于VPS的线路。
 - 需要自己维护证书。
 - [官方Github](https://github.com/trojan-gfw/trojan)
 
