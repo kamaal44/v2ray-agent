@@ -109,12 +109,18 @@ cd&&wget https://raw.githubusercontent.com/mack-a/v2ray-agent/master/config/conf
 - 下载后打开，服务器设置，修改address即可
 <img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/v2rayU_服务器配置.png" width=400>
 
-- pac设置，添加下面的链接
+- pac设置，添加下面的链接并选择使用Pac模式，即可
 ```
 https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 ```
 
-- 选择使用Pac模式，即可
 ## 2.windows
 - 下载v2rayN[点我下载](https://github.com/2dust/v2rayN/releases/download/2.44/v2rayN.zip)
 - 使用方法 [点我查看](https://github.com/233boy/v2ray/wiki/V2RayN%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B)
+
+## 3.Android
+- [v2rayNG](https://github.com/2dust/v2rayNG/releases)
+
+## 4.ios【需要自行购买或者使用共享账号安装】
+- Quantumult【推荐使用】
+- Shadowrocket
