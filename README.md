@@ -94,6 +94,21 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 - 需要自己维护证书。
 - [官方Github](https://github.com/trojan-gfw/trojan)
 
+# 客户端
+## 1.windows
+- [v2rayN](https://github.com/2dust/v2rayN/releases)
+
+## 2.Android
+- [v2rayNG](https://github.com/2dust/v2rayNG/releases)
+
+## 3.ios【需要自行购买或者使用共享账号安装】
+- Quantumult【推荐使用】
+- Shadowrocket
+
+## 4.Mac
+- [V2rayU](https://github.com/yanue/V2rayU/releases)
+
+
 # 防火墙设置[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/firewall.md)
 # 免费账号【已无法使用】[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)
 # 备注
