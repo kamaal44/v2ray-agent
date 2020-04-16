@@ -16,13 +16,17 @@
   * [1.自动模式](#1自动模式)
   * [2.手动模式](#2手动模式)
 - [自建教程](#自建教程)
+  * [1.V2Ray](#1v2ray)
+      + [1.方法1](#方法1flexible建议使用该方法)
+      + [2.方法2](#方法2full)
+  * [2.Trojan](#2trojan)
 - [客户端](#客户端)
   * [1.windows](#1windows)
   * [2.Android](#2android)
   * [2.ios](#3ios需要自行购买或者使用共享账号安装)
   * [2.Mac](#4mac)
 - [防护墙设置](#防火墙设置点击查看)
-- [免费账号已无法使用](#免费账号已无法使用点击查看)
+- [免费账号【正常使用】](#免费账号正常使用点击查看)
 - [备注](#备注)
   * [1.推荐使用v2ray+CDN的方式](#1推荐使用v2ray-cdn的方式)
       + [1.优点](#1优点)
@@ -115,7 +119,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 
 
 # 防火墙设置[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/firewall.md)
-# 免费账号【已无法使用】[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)
+# 免费账号【正常使用】[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)
 # 备注
 ## 1.推荐使用v2ray+CDN的方式
 ### 1.优点
