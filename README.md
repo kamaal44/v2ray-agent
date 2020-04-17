@@ -1,10 +1,11 @@
 # v2ray-agent
-- 本项目旨在更好的学习新知识，采用CDN+TLS+Nginx+v2ray进行伪装并突破防火墙。
-- 本教程一键脚本适合全新机器以及小白用户。
-- 如果需要手动搭建并且学习搭建步骤，可以从 [自建教程](#自建教程) 开始查看。
-- 同时还包含优化方案（CNAME优化、DNS优化、断流优化、bbr、bbr plus【阻塞拥堵算法，加快对流量的处理】）、其余设置（开机启动）、docker镜像、防火墙设置。
-- 未来还会加上docker脚本、面板、k8s等容器方面的内容。
-- 提供三个免费账号，可以应急的时候使用，也可以加入群组找管理员创建个人账号，每人限一个【暂时无法使用】。
+- 本项目旨在寻找更加自由的网络环境，享受更自由的生活。
+- 分别采用CDN+TLS+Nginx+V2Ray、Trojan进行模拟正常网站并突破防火墙，同时包含优化方法，以及简单的原理讲解。
+- 本教程极力推荐【[自建教程](#自建教程)】，自建教程可以快速入手并知晓其中的步骤。知其然知其所以然。如遇到不懂以及不理解的可以加入TG群或者进入论坛提问。
+- 优化方案包含对Cloudflare的优化（CNAME优化、DNS优化、断流优化、），VPS处理性能优化（bbr、bbr plus【阻塞拥堵算法，加快对流量的处理】）、其余设置（开机启动）、docker镜像、防火墙设置。
+- 同时提供流量中转教程【大大提高流量传输的速度，减少丢包】、免费测试账号。
+- 未来还会加上Docker脚本、面板、k8s等容器方面的内容【本人因为有多台服务器，所以一直在使用Docker部署】。
+- 提供免费订阅链接【[点击查看]()】，可以应急的时候使用，也可以加入群组找管理员创建个人账号。
 - 世界就是这样，当你开始思考时，你已经是小部分中的一员了。祝大家使用愉快。
 
 ## 有问题或者有想要加的功能可以在issus提交或者可以加入下方的电报群
@@ -12,19 +13,20 @@
 * * *
 # 目录
 - [技能点列表](#技能点列表)
-- [一键脚本](#一键脚本)
-  * [1.自动模式](#1自动模式)
-  * [2.手动模式](#2手动模式)
 - [自建教程](#自建教程)
   * [1.V2Ray](#1v2ray)
       + [1.方法1](#方法1flexible建议使用该方法)
       + [2.方法2](#方法2full)
   * [2.Trojan](#2trojan)
+- [流量转发](#流量转发完善中)【待完善】
 - [客户端](#客户端)
   * [1.windows](#1windows)
   * [2.Android](#2android)
   * [2.ios](#3ios需要自行购买或者使用共享账号安装)
   * [2.Mac](#4mac)
+- ~~[一键脚本](#一键脚本)~~
+  * [1.自动模式](#1自动模式)
+  * [2.手动模式](#2手动模式)
 - [防护墙设置](#防火墙设置点击查看)
 - [免费账号【正常使用】](#免费账号正常使用点击查看)
 - [备注](#备注)
@@ -63,21 +65,6 @@
 - [Nginx](https://www.nginx.com/)【反向代理】
 - [V2Ray](v2ray.com)【代理工具】
 
-# 一键脚本
-- <span style='color:red'>执行一键脚本的前提是下面的 【1.准备工作】完成并正确</span>
-```
-bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh)
-```
-
-## 1.自动模式
-- 只需要输入域名即可
-- 仔细检查【1.准备工作】正确
-<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本自动模式.png" width=400>
-
-## 2.手动模式
-- 可以指定需要执行的内容
-<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本手动模式.png" width=400>
-
 * * *
 
 # 自建教程
@@ -103,6 +90,9 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 - 需要自己维护证书。
 - [官方Github](https://github.com/trojan-gfw/trojan)
 
+# 流量转发 [完善中]
+- [idc.wiki](https://idc.wiki/aff.php?aff=1146)
+
 # 客户端
 ## 1.windows
 - [v2rayN](https://github.com/2dust/v2rayN/releases)
@@ -116,6 +106,21 @@ bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/in
 
 ## 4.Mac
 - [V2rayU](https://github.com/yanue/V2rayU/releases)
+
+# 一键脚本
+- <span style='color:red'>执行一键脚本的前提是下面的 【1.准备工作】完成并正确</span>
+```
+bash <(curl -L -s https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh)
+```
+
+## 1.自动模式
+- 只需要输入域名即可
+- 仔细检查【1.准备工作】正确
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本自动模式.png" width=400>
+
+## 2.手动模式
+- 可以指定需要执行的内容
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/一键脚本手动模式.png" width=400>
 
 
 # 防火墙设置[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/firewall.md)
