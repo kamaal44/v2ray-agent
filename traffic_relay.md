@@ -1,10 +1,9 @@
 - [1.准备工作](#1准备工作)
 - [2.购买流量转发服务](#2购买流量转发服务)
-- [2.配置流量转发服务](#3配置流量转发服务)
+- [3.配置流量转发服务](#3配置流量转发服务)
   * [1.配置idc.wiki流量转发](#1配置idcwiki流量转发)
-  * [2.Android](#2android)
-  * [2.ios](#3ios需要自行购买或者使用共享账号安装)
-  * [2.Mac](#4mac)
+  * [2.配置&修改DNS解析](#2配置修改dns解析这里示例为cloudflare)
+- [4.修改客户端](#4修改客户端)
 
 # 1.准备工作
 - 1.需要一台没被墙的VPS（IPLC理论上是可以转发流量给被墙的VPS，目前手中没有被墙的VPS，无法进行测试）。
@@ -30,16 +29,16 @@
 
 ## 2.配置&修改DNS解析【这里示例为CloudFlare】
 - 1.idc.wiki 示例图
-<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/idcwiki_traffic.png" width=400>
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/idcwiki_traffic.png" width=500>
 
 - 2.修改域名dns解析到中转服务ip
 ```
 # 1.name是你的二级域名的blog部分【blog.example.com】
 # 2.content则是上述示例图转发部分的ip
 ```
-<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/cloudflare_idcwiki.png" width=400>
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/cloudflare_idcwiki.png" width=500>
 
 # 4.修改客户端
 - 修改客户端端口部分【端口修改为中转IP的端口，例如上述的12187】
-- 其余客户端类似，在保证ws+tls正常使用的情况下配置流量转发服务客户端只需要修改即可。
+- 其余客户端类似，在保证ws+tls正常使用的情况下配置流量转发服务，客户端只需要修改为流量转发IP的端口即可。
 <img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/Quantumult_Setting.png" width=400>
