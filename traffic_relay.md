@@ -29,14 +29,14 @@
 
 ## 2.配置&修改DNS解析【这里示例为CloudFlare】
 - 1.idc.wiki 示例图
-<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/idcwiki_traffic.png" width=500>
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/idcwiki_traffic.png" width=700>
 
 - 2.修改域名dns解析到中转服务ip
 ```
 # 1.name是你的二级域名的blog部分【blog.example.com】
 # 2.content则是上述示例图转发部分的ip
 ```
-<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/cloudflare_idcwiki.png" width=500>
+<img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/cloudflare_idcwiki.png" width=700>
 
 # 4.修改客户端
 - 修改客户端端口部分【端口修改为中转IP的端口，例如上述的12187】
