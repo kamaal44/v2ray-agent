@@ -56,13 +56,13 @@
 * * *
 
 # 技能点列表
-- [bandwagonhost[Ubuntu、Centos、Debian]链接一](https://bandwagonhost.com)
-- [bandwagonhost[Ubuntu、Centos、Debian]链接二](https://bwh1.net)【境外vps或者其他vps厂商】
+- [cloudcone](https://app.cloudcone.com/?ref=5346)【vps】
+- [bandwagonhost](https://bandwagonhost.com/aff.php?aff=46893)【vps】
 - [freenom](https://freenom.com/)【免费域名】
 - [godaddy](https://www.godaddy.com/)【域名厂商】
 - [cloudflare](cloudflare.com)【CDN】
 - [letsencrypt](https://letsencrypt.org/)【HTTPS】
-- [Nginx](https://www.nginx.com/)【反向代理】
+- [Nginx](https://www.nginx.com/)【域名反向代理】
 - [V2Ray](v2ray.com)【代理工具】
 
 * * *
