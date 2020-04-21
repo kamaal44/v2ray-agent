@@ -42,3 +42,18 @@
 - 修改客户端端口部分【端口修改为中转IP的端口，例如上述的12187】
 - 其余客户端类似，在保证ws+tls正常使用的情况下配置流量转发服务，客户端只需要修改为流量转发IP的端口即可。
 <img src="https://raw.githubusercontent.com/mack-a/v2ray-agent/master/fodder/Quantumult_Setting.png" width=400>
+
+# 5.节点测试
+- 下列测试结果仅供参考
+## 1.联通【暂无】
+## 2.移动
+
+节点|台湾GCP|洛杉矶
+-|-|-
+莞港IPLC|延迟50ms-100ms，回源300ms-500ms|延迟50ms-100ms,回源800ms-1500ms
+苏日IPLC|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
+上海电信|延迟50ms-100ms，会源500ms-700ms|延迟100ms-200ms，回源2000ms+
+泉州CN2|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
+
+## 3.电信【暂无】
+
