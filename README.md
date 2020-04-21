@@ -18,7 +18,7 @@
       + [1.方法1](#方法1flexible建议使用该方法)
       + [2.方法2](#方法2full)
   * [2.Trojan](#2trojan)
-- [流量转发](#流量转发完善中)【待完善】
+- [流量转发](#流量转发点击查看)
 - [客户端](#客户端)
   * [1.windows](#1windows)
   * [2.Android](#2android)
@@ -90,8 +90,7 @@
 - 需要自己维护证书。
 - [官方Github](https://github.com/trojan-gfw/trojan)
 
-# 流量转发 [完善中]
-- [idc.wiki](https://idc.wiki/aff.php?aff=1146)
+# 流量转发[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/traffic_relay.md)
 
 # 客户端
 ## 1.windows
