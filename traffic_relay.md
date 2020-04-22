@@ -15,7 +15,7 @@
 - 3.需要生成HTTPS证书，推荐使用通配符证书【通配符证书稍后完善】。
 - 4.上面三个步骤参考 [点此链接查看](https://github.com/mack-a/v2ray-agent/blob/master/Cloudflare_Full.md)
 - 5.必须保证在不用流量转发服务的情况可以使用tls+ws科学上网。
-- 6.购买流量转发服务【https://idc.wiki/aff.php?aff=1146】
+- 6.购买流量转发服务[点击购买](https://idc.wiki/aff.php?aff=1146)
 
 # 2.购买流量转发服务
 - 1.注册-->[idc.wiki](https://idc.wiki/aff.php?aff=1146)
