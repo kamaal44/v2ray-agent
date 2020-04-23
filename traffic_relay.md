@@ -62,8 +62,10 @@
 
 节点|台湾GCP|洛杉矶
 -|-|-
-莞港IPLC|延迟50ms-100ms，回源300ms-500ms|延迟50ms-100ms,回源800ms-1500ms
-苏日IPLC|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
+莞港IPLC ws_tls|延迟50ms-100ms，回源300ms-500ms|延迟50ms-100ms,回源800ms-1500ms
+苏日IPLC ws_tls|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
+莞港IPLC tcp vmess|延迟50ms-100ms，回源100ms-200ms|暂无
+苏日IPLC ws_tls|暂无|延迟100ms-200ms,回源400ms-500ms
 上海电信|延迟50ms-100ms，会源500ms-700ms|延迟100ms-200ms，回源2000ms+
 泉州CN2|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
 
