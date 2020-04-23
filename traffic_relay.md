@@ -53,10 +53,10 @@
 
 节点|台湾GCP|洛杉矶
 -|-|-
-苏日IPLC|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
-徐州联通|延迟10ms-50ms，回源1000ms-1500ms|延迟10ms-50ms，回源1000ms-1500ms
-上海电信|延迟1000ms+，回源2000ms+|延迟1000ms+，回源2000ms+
-泉州CN2|延迟50ms-150ms，回源500ms-1000ms|延迟200ms+,回源1000ms+
+苏日IPLC ws_tls|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
+徐州联通 ws_tls|延迟10ms-50ms，回源1000ms-1500ms|延迟10ms-50ms，回源1000ms-1500ms
+上海电信 ws_tls|延迟1000ms+，回源2000ms+|延迟1000ms+，回源2000ms+
+泉州CN2 ws_tls|延迟50ms-150ms，回源500ms-1000ms|延迟200ms+,回源1000ms+
 
 ## 2.移动
 
@@ -64,10 +64,10 @@
 -|-|-
 莞港IPLC ws_tls|延迟50ms-100ms，回源300ms-500ms|延迟50ms-100ms,回源800ms-1500ms
 苏日IPLC ws_tls|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
-莞港IPLC tcp vmess|延迟50ms-100ms，回源100ms-200ms|暂无
-苏日IPLC tcp vmess|暂无|延迟100ms-200ms,回源400ms-500ms
-上海电信|延迟50ms-100ms，会源500ms-700ms|延迟100ms-200ms，回源2000ms+
-泉州CN2|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
+莞港IPLC tcp_vmess|延迟50ms-100ms，回源100ms-200ms|暂无
+苏日IPLC tcp_vmess|暂无|延迟100ms-200ms,回源400ms-500ms
+上海电信 ws_tls|延迟50ms-100ms，会源500ms-700ms|延迟100ms-200ms，回源2000ms+
+泉州CN2 ws_tls|延迟50ms-120ms，回源500ms-800ms|延迟100ms-200ms,回源1000ms-1500ms
 
 ## 3.电信【暂无】
 
