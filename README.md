@@ -90,7 +90,10 @@
 - 需要自己维护证书。
 - [官方Github](https://github.com/trojan-gfw/trojan)
 
-# 流量转发服务[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/traffic_relay.md)
+# 流量转发服务
+## 1.tls+ws[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/traffic_relay_tls_ws.md)
+
+## 2.tcp+vmess[]()
 
 # 客户端
 ## 1.windows
