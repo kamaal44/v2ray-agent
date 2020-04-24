@@ -3,7 +3,7 @@
 - 分别采用CDN+TLS+Nginx+V2Ray、Trojan进行模拟正常网站并突破防火墙，同时包含优化方法，以及简单的原理讲解。
 - 本教程极力推荐【[自建教程](#自建教程)】，自建教程可以快速入手并知晓其中的步骤。知其然知其所以然。如遇到不懂以及不理解的可以加入TG群或者进入论坛提问。
 - 优化方案包含对Cloudflare的优化（[CNAME优化、DNS优化、断流优化、](#优化方案)），VPS处理性能优化（bbr、bbr plus【阻塞拥堵算法，加快对流量的处理】）、其余设置（开机启动）、docker镜像、防火墙设置。
-- 同时提供[流量中转教程](#流量转发服务点击查看)【大大提高流量传输的速度，减少丢包】、[免费测试账号](#免费账号正常使用点击查看)。
+- 同时提供[流量中转教程](#流量转发服务)【大大提高流量传输的速度，减少丢包】、[免费测试账号](#免费账号正常使用点击查看)。
 - 未来还会加上Docker脚本、面板、k8s等容器方面的内容【本人因为有多台服务器，所以一直在使用Docker部署】。
 - 提供免费订阅链接【[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)】，可以应急的时候使用，也可以加入群组找管理员创建个人账号。
 - 世界就是这样，当你开始思考时，你已经是小部分中的一员了。祝大家使用愉快。
@@ -19,6 +19,8 @@
       + [2.方法2](#方法2full)
   * [2.Trojan](#2trojan)
 - [流量转发服务](#流量转发服务点击查看)
+   * [1.tls+ws](1tlsws点击查看)
+   * [2.tcp+vmess](#2tcpvmess点击查看)
 - [客户端](#客户端)
   * [1.windows](#1windows)
   * [2.Android](#2android)
@@ -93,7 +95,7 @@
 # 流量转发服务
 ## 1.tls+ws[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/traffic_relay_tls_ws.md)
 
-## 2.tcp+vmess[]()
+## 2.tcp+vmess[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/traffic_relay_tcp_vmess.md)
 
 # 客户端
 ## 1.windows
