@@ -60,7 +60,7 @@
 # 技能点列表
 - [cloudcone](https://app.cloudcone.com/?ref=5346)【vps】
 - [bandwagonhost](https://bandwagonhost.com/aff.php?aff=46893)【vps】
-- [freenom](https://freenom.com/)【免费域名】
+- [freenom](https://freenom.com/)【免费域名【注册时最好使用全局代理、ip所在地和注册地一致并且最好使用手机】】
 - [godaddy](https://www.godaddy.com/)【域名厂商】
 - [cloudflare](cloudflare.com)【CDN】
 - [letsencrypt](https://letsencrypt.org/)【HTTPS】
