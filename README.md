@@ -1,12 +1,14 @@
 # v2ray-agent
-- 本项目旨在寻找更加自由的网络环境，享受更自由的生活。
-- 分别采用CDN+TLS+Nginx+V2Ray、Trojan进行模拟正常网站并突破防火墙，同时包含优化方法，以及简单的原理讲解。
-- 本教程极力推荐【[自建教程](#自建教程)】，自建教程可以快速入手并知晓其中的步骤。知其然知其所以然。如遇到不懂以及不理解的可以加入TG群或者进入论坛提问。
+>我始终相信人是自由的，这是本项目设立的初衷，同时也感谢各种软件的开发者与维护者。
+>世界就是这样，当你开始思考时，你已经是小部分中的一员了。祝大家使用愉快。
+
+- 本项目涉及知识点较多请耐心看完，知其然知其所以然。
+- 此项目分别采用CDN+TLS+Nginx+V2Ray、Trojan进行模拟正常网站并突破防火墙，同时包含优化方法，以及简单的原理讲解。
+- 本教程极力推荐【[自建教程](#自建教程)】，自建教程可以快速入手并知晓其中的步骤。如遇到不懂以及不理解的可以加入[TG群讨论【对小白尤其友好】](https://t.me/v2rayAgent)。
 - 优化方案包含对Cloudflare的优化（[CNAME优化、DNS优化、断流优化、](#优化方案)），VPS处理性能优化（bbr、bbr plus【阻塞拥堵算法，加快对流量的处理】）、其余设置（开机启动）、docker镜像、防火墙设置。
 - 同时提供[流量中转教程](#流量转发服务)【大大提高流量传输的速度，减少丢包】、[免费测试账号](#免费账号正常使用点击查看)。
-- 未来还会加上Docker脚本、面板、k8s等容器方面的内容【本人因为有多台服务器，所以一直在使用Docker部署】。
-- 提供免费订阅链接【[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)】，可以应急的时候使用，也可以加入群组找管理员创建个人账号。
-- 世界就是这样，当你开始思考时，你已经是小部分中的一员了。祝大家使用愉快。
+- 接下来会提供V2Ray配置生成器、iptables流量转发、Docker镜像、私有Docker仓库、私有git仓库【gitlab】、以及可供部署k8s容器等方面的内容。
+- 提供免费订阅链接【[点击查看](https://github.com/mack-a/v2ray-agent/blob/master/free_account.md)】【如无法使用可加入TG群反馈】。
 
 ## 欢迎加入TG群，共同学习、共同成长。
 [点击此链接加入电报群](https://t.me/v2rayAgent)
@@ -50,7 +52,7 @@
 - [优化v2ray【断流、CNAME自选ip、dnsmasq自定义dns实现cname自选ip】](https://github.com/mack-a/v2ray-agent/blob/master/optimize_V2Ray.md)
 - [其余设置【开机自启、bbr加速】](https://github.com/mack-a/v2ray-agent/blob/master/settings.md)
 
-### Docker
+### ～～Docker【后续Docker就在私有仓库中开放】～～
 - Docker需要在另一个项目查看，功能包含流量统计、访问记录统计，面板功能以后放到Docker中，不与目前的脚本合并到一块。
 - 面板功能部署起来会很复杂，使用脚本部署要考虑很多东西，Docker只需要构建镜像或者使用构建好的即可，方便简单。
 - Docker相关内容我会放到另一个项目中进行展示，Docker构建好的镜像则托管在 【https://hub.docker.com/】中。
